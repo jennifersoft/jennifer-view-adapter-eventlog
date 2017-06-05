@@ -1,50 +1,19 @@
 package util;
 
-import com.jennifersoft.view.adapter.util.LogUtil;
-import com.jennifersoft.view.config.ConfigValue;
 import prop.LogProp;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+import com.jennifersoft.view.extension.util.PropertyUtil;
 
 public class LogConfig {
-	private static Properties properties = null;
+	static final LogProp prop = new LogProp();
+	static final String PATTERN = "[%time] domain=%domainName(%domainId), instance=%instanceName(%instanceId), level=%eventLevel, name=%eventName, value=%value";
+	static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+	static final String FULL_PATH = "../logs/eventlog.%d{yyyy-MM-dd}.log";
 
-	public static void loadConfig() {
-		properties = new Properties();
-		
-		FileInputStream file = null;
-		String path = ConfigValue.adapter_config_path;
-		
-		try {
-			if(path != null) {
-				file = new FileInputStream(path);
-				properties.load(file);
-			}
-		} catch (IOException e) {
-			LogUtil.error(e.toString());
-		}
-	}
-	
-	public static String getValue(String key) {
-		if(properties == null) {
-			loadConfig();
-		}
-		
-		return properties.getProperty(key);
-	}
-	
 	public static LogProp getLog() {
-		String pattern = getValue("log.pattern");
-		String date_format = getValue("log.date_format");
-		String full_path = getValue("log.full_path");
+		prop.setPattern(PropertyUtil.getValue("eventlog", "pattern", PATTERN));
+		prop.setDateFormat(PropertyUtil.getValue("eventlog", "date_format", DATE_FORMAT));
+		prop.setFullPath(PropertyUtil.getValue("eventlog", "full_path", FULL_PATH));
 
-		LogProp log = new LogProp();
-		log.setPattern(pattern != null ? pattern : "[%time] domain=%domainName(%domainId), instance=%instanceName(%instanceId), level=%eventLevel, name=%eventName, value=%value");
-		log.setDateFormat(date_format != null ? date_format : "yyyy-MM-dd HH:mm:ss");
-		log.setFullPath(full_path != null ? full_path : "../logs/eventlog.%d{yyyy-MM-dd}.log");
-
-		return log;
+		return prop;
 	}
 }
