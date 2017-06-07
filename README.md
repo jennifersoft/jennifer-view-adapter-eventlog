@@ -1,10 +1,10 @@
 ## Getting started
 
-You must modify the configuration file of the view server. (conf/server_view.conf)
-```
-adapter_class_path = ${ADAPTER_PROJECT_PATH}/dist/jennifer-view-adapter-eventlog-1.0.0.jar
-adapter_config_path = ${ADAPTER_PROJECT_PATH}/dist/jennifer-view-adapter-eventlog-1.0.0.properties
-adapter_event_class_name = event.LogAdapter
-```
+Run the following JENNIFER administration menu.
 
-After modifying the configuration file, you must restart the view server.
+- 1. Extension & Notice> Adapter and Plugin
+- 2. Click the Add button.
+- 3. Select the 'EVENT' type.
+- 4. Enter the 'eventlog' ID.
+- 5. Enter the adapter path directly or upload the file.
+- 6. Enter the class 'event.LogAdapter'.
