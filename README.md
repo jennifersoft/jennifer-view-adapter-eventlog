@@ -1,3 +1,8 @@
+## Important Notices
+
+It is available from Jennifer Server version 5.2.3. If you want to use the old method, use the 'old' branch.
+
+
 ## Getting started
 
 Execute the following in the Jennifer management screen.
@@ -8,6 +13,7 @@ Execute the following in the Jennifer management screen.
  4. Enter the 'eventlog' ID.
  5. Enter the adapter path directly or upload the file.
  6. Enter the class 'event.LogAdapter'.
+
 
 ## How to use Options
 
