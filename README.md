@@ -22,3 +22,5 @@ Adapter options are shown in the table below.
 If there is no option, the default value of the table is applied. Here's how to add an option:
 
 <img width="887" alt="custom_key" src="https://user-images.githubusercontent.com/1277117/26880960-ff4ef69c-4bd0-11e7-93b6-185391351711.png">
+
+<img width="887" alt="custom_key2" src="https://user-images.githubusercontent.com/1277117/26881100-66ae4298-4bd1-11e7-886b-851f4441fd0c.png">
