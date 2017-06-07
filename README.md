@@ -2,7 +2,7 @@
 
 Execute the following in the Jennifer management screen.
 
- 1. Extension & Notice> Adapter and Plugin
+ 1. Extension & Notice > Adapter and Plugin
  2. Click the Add button.
  3. Select the 'EVENT' type.
  4. Enter the 'eventlog' ID.
