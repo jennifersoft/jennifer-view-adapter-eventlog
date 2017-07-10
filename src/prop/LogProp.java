@@ -4,6 +4,7 @@ public class LogProp {
 	private String pattern;
 	private String dateFormat;
 	private String fullPath;
+	private String rollingMode;
 
 	public String getPattern() {
 		return pattern;
@@ -29,9 +30,18 @@ public class LogProp {
 		this.fullPath = fullPath;
 	}
 
+	public String getRollingMode() {
+		return rollingMode;
+	}
+
+	public void setRollingMode(String rollingMode) {
+		this.rollingMode = rollingMode;
+	}
+
 	public String toString() {
 		return "pattern: " + pattern + ", " +
 				"dateFormat: " + dateFormat + ", " +
-				"fullPath: " + fullPath;
+				"fullPath: " + fullPath + ", " +
+				"rollingMode: " + rollingMode;
  	}
 }
