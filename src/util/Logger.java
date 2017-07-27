@@ -3,6 +3,7 @@ package util;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
+import ch.qos.logback.core.FileAppender;
 import ch.qos.logback.core.rolling.RollingFileAppender;
 import ch.qos.logback.core.rolling.TimeBasedRollingPolicy;
 import org.slf4j.LoggerFactory;
@@ -45,30 +46,56 @@ public class Logger {
             // Don't inherit root appender
             logger.setAdditive(false);
 
-            RollingFileAppender rollingFile = new RollingFileAppender();
-            rollingFile.setContext(context);
-            rollingFile.setName("EVENT_LOG");
-
-            // Set up rolling policy
-            TimeBasedRollingPolicy rollingPolicy = new TimeBasedRollingPolicy();
-            rollingPolicy.setFileNamePattern(prop.getFullPath());
-
-            rollingPolicy.setParent(rollingFile);
-            rollingPolicy.setContext(context);
-            rollingPolicy.start();
-
-            // set up pattern encoder
-            PatternLayoutEncoder encoder = new PatternLayoutEncoder();
-            encoder.setContext(context);
-            encoder.setPattern("%msg%n");
-            encoder.start();
-
-            rollingFile.setRollingPolicy(rollingPolicy);
-            rollingFile.setEncoder(encoder);
-            rollingFile.start();
-
             // Atach appender to logger
-            logger.addAppender(rollingFile);
+            if(prop.getRollingMode().equals("true")) {
+                logger.addAppender(getRollingFileAppender(prop, context));
+            } else {
+                logger.addAppender(getFileAppender(prop, context));
+            }
         }
+    }
+
+    private static RollingFileAppender getRollingFileAppender(LogProp prop, LoggerContext context) {
+        RollingFileAppender rollingFile = new RollingFileAppender();
+        rollingFile.setContext(context);
+        rollingFile.setName("EVENT_LOG");
+
+        // Set up rolling policy
+        TimeBasedRollingPolicy rollingPolicy = new TimeBasedRollingPolicy();
+        rollingPolicy.setFileNamePattern(prop.getFullPath());
+
+        rollingPolicy.setParent(rollingFile);
+        rollingPolicy.setContext(context);
+        rollingPolicy.start();
+
+        // set up pattern encoder
+        PatternLayoutEncoder encoder = new PatternLayoutEncoder();
+        encoder.setContext(context);
+        encoder.setPattern("%msg%n");
+        encoder.start();
+
+        rollingFile.setRollingPolicy(rollingPolicy);
+        rollingFile.setEncoder(encoder);
+        rollingFile.start();
+
+        return rollingFile;
+    }
+
+    private static FileAppender getFileAppender(LogProp prop, LoggerContext context) {
+        FileAppender rollingFile = new FileAppender();
+        rollingFile.setContext(context);
+        rollingFile.setName("EVENT_LOG");
+
+        // set up pattern encoder
+        PatternLayoutEncoder encoder = new PatternLayoutEncoder();
+        encoder.setContext(context);
+        encoder.setPattern("%msg%n");
+        encoder.start();
+
+        rollingFile.setFile(prop.getFullPath());
+        rollingFile.setEncoder(encoder);
+        rollingFile.start();
+
+        return rollingFile;
     }
 }
