@@ -1,6 +1,6 @@
 ## Important Notices
 
-It is available from Jennifer Server version 5.2.3. If you want to use the old method, use the 'old' branch.
+It is available from Jennifer Server version 5.4.0.
 
 
 ## Getting started
@@ -12,7 +12,7 @@ Execute the following in the Jennifer management screen.
  3. Select the 'EVENT' type.
  4. Enter the 'eventlog' ID.
  5. Enter the adapter path directly or upload the file.
- 6. Enter the class 'event.LogAdapter'.
+ 6. Enter the class 'com.aries.eventlog.LogAdapter'.
 
 
 ## How to use Options

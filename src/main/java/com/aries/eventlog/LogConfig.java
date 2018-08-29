@@ -1,4 +1,4 @@
-package com.aries.adapter.eventlog;
+package com.aries.eventlog;
 
 import com.aries.extension.util.PropertyUtil;
 
