@@ -1,7 +1,6 @@
-package util;
+package com.aries.adapter.eventlog;
 
-import prop.LogProp;
-import com.aries.view.extension.util.PropertyUtil;
+import com.aries.extension.util.PropertyUtil;
 
 public class LogConfig {
 	static final LogProp prop = new LogProp();

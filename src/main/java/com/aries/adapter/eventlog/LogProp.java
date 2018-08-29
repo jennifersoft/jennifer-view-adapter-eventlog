@@ -1,4 +1,4 @@
-package prop;
+package com.aries.adapter.eventlog;
 
 public class LogProp {
 	private String pattern;

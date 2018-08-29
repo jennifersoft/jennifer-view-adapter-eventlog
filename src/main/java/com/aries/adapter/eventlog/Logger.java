@@ -1,4 +1,4 @@
-package util;
+package com.aries.adapter.eventlog;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
@@ -7,7 +7,6 @@ import ch.qos.logback.core.FileAppender;
 import ch.qos.logback.core.rolling.RollingFileAppender;
 import ch.qos.logback.core.rolling.TimeBasedRollingPolicy;
 import org.slf4j.LoggerFactory;
-import prop.LogProp;
 
 public class Logger {
     private static ch.qos.logback.classic.Logger logger = null;
@@ -41,7 +40,7 @@ public class Logger {
             LogProp prop = LogConfig.getLog();
 
             LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
-            logger = context.getLogger(Logger.class);
+            logger = context.getLogger(LogAdapter.class);
 
             // Don't inherit root appender
             logger.setAdditive(false);
