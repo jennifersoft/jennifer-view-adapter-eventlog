@@ -4,7 +4,7 @@ import com.aries.extension.util.PropertyUtil;
 
 public class LogConfig {
 	static final LogProp prop = new LogProp();
-	static final String PATTERN = "[%time] domain=%domainName(%domainId), instance=%instanceName(%instanceId), level=%eventLevel, name=%eventName, value=%value";
+	static final String PATTERN = "[%time] domain=%domainName(id=%domainId, group=%domainGroupHierarchy), instance=%instanceName(%instanceId), level=%eventLevel, name=%eventName, value=%value";
 	static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	static final String FULL_PATH = "../logs/eventlog.%d{yyyy-MM-dd}.log";
 	static final String ROLLING_MODE = "true";

@@ -22,6 +22,7 @@ public class LogAdapter implements EventHandler {
 				String nameFormat = (!model.metricsName.equals("")) ? model.metricsName : model.errorType;
 
 				pattern = pattern.replaceFirst("%domainId", "" + model.domainId);
+				pattern = pattern.replaceFirst("%domainGroupHierarchy", model.domainGroupHierarchy.toString()); // supported since 5.5.3.3, type is List<String>
 				pattern = pattern.replaceFirst("%domainName", "" + model.domainName);
 				pattern = pattern.replaceFirst("%instanceId", "" + model.instanceId);
 				pattern = pattern.replaceFirst("%instanceName", "" + model.instanceName);
