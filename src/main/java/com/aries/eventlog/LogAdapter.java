@@ -26,6 +26,7 @@ public class LogAdapter implements EventHandler {
 				pattern = pattern.replaceFirst("%domainName", "" + model.domainName);
 				pattern = pattern.replaceFirst("%instanceId", "" + model.instanceId);
 				pattern = pattern.replaceFirst("%instanceName", "" + model.instanceName);
+				pattern = pattern.replaceFirst("%businessName", "" + model.businessName);
 				pattern = pattern.replaceFirst("%value", "" + model.value);
 				pattern = pattern.replaceFirst("%time", "" + timeFormat);
 				pattern = pattern.replaceFirst("%eventName", "" + nameFormat);
