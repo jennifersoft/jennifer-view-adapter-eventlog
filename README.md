@@ -1,6 +1,6 @@
 ## Important Notices
 
-It is available from Jennifer Server version 5.6.4
+It is available from Jennifer Server version 5.6.3
 
 
 ## Getting started
