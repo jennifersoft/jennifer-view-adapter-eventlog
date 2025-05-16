@@ -45,6 +45,7 @@ public class Logger {
             // Don't inherit root appender
             logger.setAdditive(false);
 
+
             // Atach appender to logger
             if(prop.getRollingMode().equals("true")) {
                 logger.addAppender(getRollingFileAppender(prop, context));
@@ -62,7 +63,7 @@ public class Logger {
         // Set up rolling policy
         TimeBasedRollingPolicy rollingPolicy = new TimeBasedRollingPolicy();
         rollingPolicy.setFileNamePattern(prop.getFullPath());
-
+        rollingPolicy.setMaxHistory(Integer.parseInt(prop.getMaxHistory()));
         rollingPolicy.setParent(rollingFile);
         rollingPolicy.setContext(context);
         rollingPolicy.start();

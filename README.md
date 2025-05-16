@@ -19,12 +19,13 @@ Execute the following in the Jennifer management screen.
 
 Adapter options are shown in the table below.
 
-| Key           | Default Value |
-| ------------- |:-------------:|
-| pattern       | [%time] domain=%domainName(%domainId), instance=%instanceName(%instanceId), level=%eventLevel, name=%eventName, value=%value |
-| date_format   | yyyy-MM-dd HH:mm:ss |
-| full_path | ../logs/eventlog.%d{yyyy-MM-dd}.log |
-| rolling_mode | true |
+| Key          |                                                        Default Value                                                         |
+|--------------|:----------------------------------------------------------------------------------------------------------------------------:|
+| pattern      | [%time] domain=%domainName(%domainId), instance=%instanceName(%instanceId), level=%eventLevel, name=%eventName, value=%value |
+| date_format  |                                                     yyyy-MM-dd HH:mm:ss                                                      |
+| full_path    |                                             ../logs/eventlog.%d{yyyy-MM-dd}.log                                              |
+| rolling_mode |                                                             true                                                             |
+| max_history  |                                                              30                                                              |
 
 If there is no option, the default value of the table is applied. Here's how to add an option:
 

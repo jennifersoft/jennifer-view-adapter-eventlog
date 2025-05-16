@@ -8,12 +8,14 @@ public class LogConfig {
 	static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 	static final String FULL_PATH = "../logs/eventlog.%d{yyyy-MM-dd}.log";
 	static final String ROLLING_MODE = "true";
+	static final String MAX_HISTORY = "30";
 
 	public static LogProp getLog() {
 		prop.setPattern(PropertyUtil.getValue("eventlog", "pattern", PATTERN));
 		prop.setDateFormat(PropertyUtil.getValue("eventlog", "date_format", DATE_FORMAT));
 		prop.setFullPath(PropertyUtil.getValue("eventlog", "full_path", FULL_PATH));
 		prop.setRollingMode(PropertyUtil.getValue("eventlog", "rolling_mode", ROLLING_MODE));
+		prop.setMaxHistory(PropertyUtil.getValue("eventlog", "max_history", MAX_HISTORY));
 
 		return prop;
 	}

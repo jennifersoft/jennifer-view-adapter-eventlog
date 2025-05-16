@@ -5,6 +5,15 @@ public class LogProp {
 	private String dateFormat;
 	private String fullPath;
 	private String rollingMode;
+	private String maxHistory; // 기본값 30일
+
+	public String getMaxHistory() {
+		return maxHistory;
+	}
+
+	public void setMaxHistory(String maxHistory) {
+		this.maxHistory = maxHistory;
+	}
 
 	public String getPattern() {
 		return pattern;
@@ -42,6 +51,7 @@ public class LogProp {
 		return "pattern: " + pattern + ", " +
 				"dateFormat: " + dateFormat + ", " +
 				"fullPath: " + fullPath + ", " +
-				"rollingMode: " + rollingMode;
+				"rollingMode: " + rollingMode + ", " +
+				"maxHistory: " + maxHistory;
  	}
 }
