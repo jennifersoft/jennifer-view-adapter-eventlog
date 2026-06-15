@@ -78,7 +78,7 @@
     <repositories>
         <repository>
             <id>central</id>
-            <url>http://support.jennifersoft.com:8081/nexus/content/groups/public</url>
+            <url>https://maven.jennifersoft.com/nexus/content/groups/public</url>
         </repository>
         <repository>
             <id>mvnrepository</id>
